@@ -114,3 +114,6 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+# Google Search Console
+google_site_verification: "googlec15176eb6572fa66"
