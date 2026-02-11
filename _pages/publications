@@ -1,0 +1,54 @@
+---
+layout: single
+title: "Publications"
+permalink: /publications/
+author_profile: true
+toc: true
+toc_label: "Años"
+---
+
+## 2024
+
+**Título del Paper**  
+*Tu Nombre*, Coautor1, Coautor2  
+*Conference/Journal Name*, 2024  
+[[PDF]](/assets/files/paper2024.pdf) [[Code]](https://github.com/tunombre/proyecto) [[BibTeX]](#bibtex1)
+
+<details id="bibtex1">
+<summary>BibTeX</summary>
+<pre>
+@inproceedings{tunombre2024,
+  title={Título del Paper},
+  author={Apellido, Tu Nombre and Coautor1 and Coautor2},
+  booktitle={Conference Name},
+  year={2024}
+}
+</pre>
+</details>
+
+---
+
+## 2023
+
+**Otro Paper Importante**  
+*Tu Nombre*, Coautor  
+*Journal Name*, vol. X, no. Y, pp. Z-W, 2023  
+[[PDF]](/assets/files/paper2023.pdf) [[DOI]](https://doi.org/XX.XXXX/XXXXX)
+
+---
+
+## Preprints
+
+**Work in Progress Title**  
+*Tu Nombre*, et al.  
+*arXiv preprint arXiv:XXXX.XXXXX*, 2024  
+[[arXiv]](https://arxiv.org/abs/XXXX.XXXXX)
+
+---
+
+## Tesis
+
+**Master Thesis: Título de tu Tesis**  
+*Tu Nombre*  
+Universidad, 2020  
+[[PDF]](/assets/files/master-thesis.pdf)
