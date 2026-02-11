@@ -11,6 +11,4 @@ toc_icon: "file-alt"
 Please find my CV attached [here](/assets/cv.pdf)
 
 
-Email: tuemail@ua.es  
-Office: Edificio, Despacho XX  
-Universidad de Alicante
+
