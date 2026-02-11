@@ -8,7 +8,7 @@ toc_label: "Contenido"
 toc_icon: "file-alt"
 ---
 
-Please find my CV attached [here](/assets/files/CV.pdf)
+Please find my CV attached [here](/assets/files/cv.pdf)
 
 
 Email: tuemail@ua.es  
