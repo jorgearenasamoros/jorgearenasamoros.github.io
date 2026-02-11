@@ -7,8 +7,8 @@ author_profile: true
 
 ## Working Papers
 
-**Título de tu Paper Principal**  
-[Slides](/assets/files/paper1-slides.pdf) [Paper](/assets/files/paper1-draft.pdf)  
+**Revisiting Fundamentals of the European Gas Market: The Role of Supply Substitution**  
+[Slides](/assets/files/Paper_Gas/Presentation_IW.pdf) [Paper](/assets/files/Paper_Gas/Project_Natural_Gas.pdf)  
 *(Job Market Paper)* o *(Submitted)* o *(Under Review)*
 
 **Presented at:**  
