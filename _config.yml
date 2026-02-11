@@ -16,8 +16,8 @@
 title: "Jorge Arenas"
 email: "jorgearenasamoros@gmail.com"
 description: "PhD Candidate in University of Alicante"
-twitter_username: username
-github_username: jarenas48
+#twitter_username: username
+github_username: jorgearenasamoros
 minimal_mistakes_skin: "air"
 url: "https://jarenas.github.io"
 search: true
@@ -57,7 +57,7 @@ plugins:
 
 author:
   name   : "Jorge Arenas"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/foto_jorge.jpeg"
   bio    : "My awesome biography constrained to a sentence or two goes here."
   location: "Alicante, España"
   emai: "jorgearenasamors@gmail.com"
