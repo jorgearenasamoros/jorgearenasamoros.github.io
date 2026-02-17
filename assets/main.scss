@@ -5,23 +5,12 @@
 @import "minimal-mistakes";
 
 // Hacer la foto más grande y quitar el enlace clickable
-.author__avatar {
-  img {
-    max-width: 320px !important;  // Tamaño (ajusta: 200px, 300px, etc.)
-    border-radius: 10px !important;  // Mantiene círculo
-    // O usa: border-radius: 10px !important; para rectangular con esquinas
-    // O usa: border-radius: 0 !important; para totalmente rectangular
-  }
-  
-  // Quitar el cursor de pointer (que no parezca clickable)
-  cursor: default !important;
-  
-  // Desactivar el hover effect
-  &:hover {
-    opacity: 1 !important;
-  }
+.author__avatar img {
+  max-width: 300px !important;
+  width: 300px !important;
+  height: auto !important;
+  border-radius: 50% !important;
 }
-
 // Quitar el enlace completamente
 .author__avatar a {
   pointer-events: none !important;  // Desactiva el click
