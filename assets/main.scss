@@ -1,23 +1,24 @@
 ---
 ---
-
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes";
 
-// Hacer el avatar rectangular y más grande
+// Hacer el avatar rectangular y MÁS GRANDE (como el ejemplo)
 .author__avatar {
   img {
     max-width: 100% !important;
     width: 100% !important;
-    height: auto !important;
-    border-radius: 8px !important; // Rectangular con esquinas redondeadas
+    height: 200px !important;  // Altura fija más grande
+    object-fit: cover !important;  // Para que se recorte bien
+    border-radius: 8px !important;
   }
 }
 
-// Opcional: hacer el contenedor del avatar más ancho
+// Hacer el contenedor del avatar más ancho
 .sidebar .author__avatar {
   max-width: none;
   width: 100%;
+  margin-bottom: 1em;
 }
 
 @media (max-width: 768px) {
