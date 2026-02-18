@@ -20,7 +20,7 @@
   }
 }
 
-/* Avatar encima del bio, foto apaisada sin recorte, sin clic */
+/* Avatar encima del bio, foto apaisada sin recorte, sin clic, sin neblina */
 .sidebar .author__avatar {
   display: block !important;
   width: 100%;
@@ -29,17 +29,24 @@
 
   a,
   a:hover,
-  a:focus {
-    pointer-events: none;
-    cursor: default;
+  a:focus,
+  a:active,
+  a::before,
+  a::after {
+    pointer-events: none !important;
+    cursor: default !important;
     opacity: 1 !important;
     filter: none !important;
     transition: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
   img,
   a img,
-  a:hover img {
+  a:hover img,
+  a:focus img,
+  a:active img {
     border-radius: 6px;
     max-width: 100%;
     width: 100%;
@@ -48,6 +55,7 @@
     opacity: 1 !important;
     filter: none !important;
     transition: none !important;
+    box-shadow: none !important;
   }
 }
 
