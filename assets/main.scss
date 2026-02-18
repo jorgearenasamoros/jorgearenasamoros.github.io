@@ -4,29 +4,22 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes";
 
-// Hacer la foto más grande y quitar el enlace clickable
-.author__avatar img {
-  max-width: 300px !important;
-  width: 300px !important;
-  height: auto !important;
-  border-radius: 50% !important;
+// Ocultar avatar circular
+.author__avatar {
+  display: none;
 }
-// Quitar el enlace completamente
-.author__avatar a {
-  pointer-events: none !important;  // Desactiva el click
-  cursor: default !important;
-}
-// Añadir foto encima del author profile
+
+// Añadir imagen rectangular grande arriba del author content
 .author__content:before {
   content: "";
   display: block;
   width: 100%;
-  height: 300px;
+  height: 250px;
   background-image: url('/assets/images/foto_pizarra.JPG');
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
-  margin-bottom: 1em;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
 }
 // Sidebar más ancha para acomodar la foto grande
 .sidebar {
