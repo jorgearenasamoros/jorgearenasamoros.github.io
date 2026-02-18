@@ -27,12 +27,19 @@
   float: none;
   margin-bottom: 10px;
 
-  a {
+  a,
+  a:hover,
+  a:focus {
     pointer-events: none;
     cursor: default;
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
   }
 
-  img {
+  img,
+  a img,
+  a:hover img {
     border-radius: 6px;
     max-width: 100%;
     width: 100%;
