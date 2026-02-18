@@ -3,6 +3,8 @@ layout: home
 author_profile: true
 ---
 
+![](/assets/images/foto_pizarra.JPG){: .align-center style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; margin-bottom: 2em;"}
+
 Welcome to my personal website!
 
 I am a PhD student at University of Alicante.
