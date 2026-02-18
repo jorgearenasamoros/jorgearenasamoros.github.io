@@ -3,19 +3,39 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes";
 
-// Hacer el contenedor más grande Y mostrar imagen completa
+// Hacer la barra lateral más ancha
+.sidebar {
+    width: 350px !important;  // Era ~200px, ahora 350px
+}
+
+// Ajustar el contenido principal para que no se superponga
+.page {
+    padding-left: 370px !important;  // 350px + 20px margen
+}
+
+// Avatar más grande
 .sidebar .author__avatar {
     max-width: none !important;
     width: 100% !important;
-    height: 400px !important;  // Contenedor más alto
+    height: 400px !important;
     margin-bottom: 1em !important;
 }
 
 .sidebar .author__avatar img {
     max-width: 100% !important;
     width: 100% !important;
-    height: 100% !important;  // Llenar todo el contenedor
-    object-fit: contain !important;  // Mostrar completa sin recortar
+    height: 100% !important;
+    object-fit: contain !important;
     border-radius: 8px !important;
     display: block !important;
+}
+
+// Responsive: en móviles volver al comportamiento normal
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+  }
+  .page {
+    padding-left: 0 !important;
+  }
 }
