@@ -4,26 +4,20 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes";
 
-// Ocultar avatar circular
+// Hacer el avatar rectangular y más grande
 .author__avatar {
-  display: none;
+  img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important; // Rectangular con esquinas redondeadas
+  }
 }
 
-// Añadir imagen rectangular grande arriba del author content
-.author__content:before {
-  content: "";
-  display: block;
+// Opcional: hacer el contenedor del avatar más ancho
+.sidebar .author__avatar {
+  max-width: none;
   width: 100%;
-  height: 250px;
-  background-image: url('/assets/images/foto_pizarra.JPG');
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  margin-bottom: 1.5em;
-}
-// Sidebar más ancha para acomodar la foto grande
-.sidebar {
-  width: 300px !important;  // Ajusta según el tamaño de tu foto
 }
 
 @media (max-width: 768px) {
