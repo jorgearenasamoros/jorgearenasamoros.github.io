@@ -49,3 +49,15 @@
   width: 100%;
   padding-left: 0;
 }
+
+/* Móvil: foto centrada y limitada en tamaño */
+@media (max-width: 1023px) {
+  .sidebar .author__avatar {
+    text-align: center;
+
+    img {
+      width: 55% !important;
+      max-width: 220px;
+    }
+  }
+}
