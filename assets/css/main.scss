@@ -1,0 +1,20 @@
+---
+# Only the main import below
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* Avatar: foto apaisada sin recorte ni redondeo */
+.author__avatar {
+  display: block;
+  margin-bottom: 10px;
+
+  img {
+    border-radius: 6px;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
