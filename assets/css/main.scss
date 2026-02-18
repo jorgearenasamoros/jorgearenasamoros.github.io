@@ -3,26 +3,18 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes";
 
-// CSS más específico para forzar el cambio
-.sidebar .author__avatar img,
-.author__avatar img {
+// Mostrar la imagen completa sin recortar
+.sidebar .author__avatar img {
     max-width: 100% !important;
     width: 100% !important;
-    height: 450px !important;  // Much larger - was 200px, now 450px
-    object-fit: cover !important;
+    height: auto !important;  // Cambio clave: auto en lugar de 450px
+    object-fit: contain !important;  // Cambio clave: contain en lugar de cover
     border-radius: 8px !important;
     display: block !important;
 }
 
-.sidebar .author__avatar,
-.author__avatar {
+.sidebar .author__avatar {
     max-width: none !important;
     width: 100% !important;
     margin-bottom: 1em !important;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100% !important;
-  }
 }
