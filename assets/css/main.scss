@@ -5,9 +5,11 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* Avatar: foto apaisada sin recorte ni redondeo */
-.author__avatar {
-  display: block;
+/* Avatar encima del bio, foto apaisada sin recorte */
+.sidebar .author__avatar {
+  display: block !important;
+  width: 100%;
+  float: none;
   margin-bottom: 10px;
 
   img {
@@ -17,4 +19,10 @@
     height: auto;
     object-fit: contain;
   }
+}
+
+.sidebar .author__content {
+  display: block !important;
+  width: 100%;
+  padding-left: 0;
 }
