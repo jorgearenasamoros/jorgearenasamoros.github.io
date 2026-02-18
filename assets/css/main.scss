@@ -38,6 +38,9 @@
     width: 100%;
     height: auto;
     object-fit: contain;
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
   }
 }
 
