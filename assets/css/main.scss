@@ -5,10 +5,16 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* Sidebar más ancho para que la foto se vea grande */
+/* Sidebar más ancho + contenido ajustado para que no se solapen */
 @media (min-width: 1024px) {
   .sidebar {
-    width: 320px !important;
+    width: 280px !important;
+    float: left !important;
+  }
+
+  .page {
+    float: right !important;
+    width: calc(100% - 310px) !important;
   }
 }
 
