@@ -3,26 +3,41 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes";
 
-// Hacer el avatar rectangular y MÁS GRANDE (como el ejemplo)
-.author__avatar {
-  img {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: 200px !important;  // Altura fija más grande
-    object-fit: cover !important;  // Para que se recorte bien
-    border-radius: 8px !important;
+// 1. Hacer la barra lateral más ancha
+.sidebar {
+    width: 320px !important;
+}
+
+// 2. Ajustar CORRECTAMENTE el contenido principal para que no se superponga
+@media (min-width: 64em) {
+  .page {
+    float: right !important;
+    width: calc(100% - 340px) !important;
+    padding-left: 1em !important;
   }
 }
 
-// Hacer el contenedor del avatar más ancho
-.sidebar .author__avatar {
-  max-width: none;
-  width: 100%;
-  margin-bottom: 1em;
+// 3. Avatar grande que llene el espacio disponible
+.author__avatar {
+    width: 100% !important;
+    max-width: none !important;
 }
 
-@media (max-width: 768px) {
+.author__avatar img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+}
+
+// 4. Responsive: en pantallas pequeñas volver al comportamiento normal
+@media (max-width: 64em) {
   .sidebar {
     width: 100% !important;
+  }
+  .page {
+    width: 100% !important;
+    float: none !important;
   }
 }
