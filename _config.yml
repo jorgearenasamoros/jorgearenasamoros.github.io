@@ -21,7 +21,7 @@ github_username: jorgearenasamoros
 minimal_mistakes_skin: "air"
 url: "https://jorgearenasamoros.github.io"
 baseurl: ""
-search: true
+#search: true
 
 # Build settings
 markdown: kramdown
