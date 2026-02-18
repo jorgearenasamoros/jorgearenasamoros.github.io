@@ -3,38 +3,41 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes";
 
-// Resetear todo y empezar simple
+// 1. Hacer la barra lateral más ancha
 .sidebar {
-    width: 400px !important;
-    position: fixed !important;
-    left: 0 !important;
-    top: 0 !important;
-    height: 100vh !important;
-    overflow-y: auto !important;
+    width: 320px !important;
 }
 
-// Mover el contenido principal para que no se superponga
-.page {
-    margin-left: 420px !important;
-    padding-left: 20px !important;
+// 2. Ajustar CORRECTAMENTE el contenido principal para que no se superponga
+@media (min-width: 64em) {
+  .page {
+    float: right !important;
+    width: calc(100% - 340px) !important;
+    padding-left: 1em !important;
+  }
 }
 
-// Avatar grande y simple
-.sidebar .author__avatar img {
+// 3. Avatar grande que llene el espacio disponible
+.author__avatar {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.author__avatar img {
     width: 100% !important;
     height: auto !important;
-    max-height: none !important;
+    max-height: 400px !important;
+    object-fit: contain !important;
     border-radius: 8px !important;
 }
 
-// Responsive
-@media (max-width: 1024px) {
+// 4. Responsive: en pantallas pequeñas volver al comportamiento normal
+@media (max-width: 64em) {
   .sidebar {
-    position: relative !important;
     width: 100% !important;
-    height: auto !important;
   }
   .page {
-    margin-left: 0 !important;
+    width: 100% !important;
+    float: none !important;
   }
 }
