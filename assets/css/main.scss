@@ -8,13 +8,15 @@
 /* Sidebar más ancho + contenido ajustado para que no se solapen */
 @media (min-width: 1024px) {
   .sidebar {
-    width: 280px !important;
+    width: 320px !important;
     float: left !important;
   }
 
+  /* .archive = layout home, .page = layout single */
+  .archive,
   .page {
     float: right !important;
-    width: calc(100% - 310px) !important;
+    width: calc(100% - 350px) !important;
   }
 }
 
