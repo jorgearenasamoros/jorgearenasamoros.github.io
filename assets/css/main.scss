@@ -87,4 +87,16 @@
     display: block !important;
     padding-left: 0 !important;
   }
+
+  /* Dropdown "Follow" dentro de la pantalla */
+  .sidebar .author__urls-wrapper {
+    position: relative;
+  }
+
+  .sidebar .author__urls {
+    position: absolute;
+    left: 0 !important;
+    right: auto !important;
+    width: 100%;
+  }
 }
