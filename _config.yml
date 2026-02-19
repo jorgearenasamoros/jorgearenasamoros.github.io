@@ -57,7 +57,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Jorge Arenas Amorós"
+  #name   : "Jorge Arenas Amorós"
   avatar : "/assets/images/foto_pizarra.JPG"
   bio    : "PhD Candidate in Economics at University of Alicante"
   location: "Alicante, España"
