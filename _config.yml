@@ -117,3 +117,10 @@ tag_archive:
 
 # Google Search Console
 google_site_verification: "flvbRHxozotfadTNl8RZhCEE0ekwzfzPX7nNeRWHO3o"
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-0T7C0Y0NQ3"
+    anonymize_ip: false
