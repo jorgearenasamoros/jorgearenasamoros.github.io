@@ -15,6 +15,14 @@ We study the European natural gas market through a Bayesian Structural Vector Au
 </p>
 </details>
 
+**What Do Fed Funds Futures Price?**  
+<details>
+<summary><strong>Abstract</strong> </summary>
+<p>
+Fed funds futures price the expected policy path entangled with a risk premium. Since 2022, real-money prediction markets have quoted the physical odds of every FOMC decision daily. Comparing both against non-traded surveys, which cannot price risk, shows that the futures, not the prediction market, are the risk-neutral leg: the gap between them predicts the futures' forecast errors one-for-one while the market's stay unpredictable. A term-structure model combining the three sources delivers the premium daily at every horizon, including those where prediction markets do not quote, and it switches sign across the cycle: negative from six months to a year while the Fed tightened, positive at two years after. On FOMC days, premium repricing is most of the typical move at year-ahead horizons, in no systematic direction: expectation-shock instruments inherit it as noise, not bias.
+</p>
+</details>
+
 ---
 
 ## Work in progress
