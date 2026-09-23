@@ -118,3 +118,59 @@
 .page__content .btn {
   margin-top: 0.5em;
 }
+
+/* Abstract desplegable: enlace azul con flecha y el texto en un panel */
+.page__content details > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.8em;
+  color: $primary-color;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.page__content details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.page__content details > summary:hover {
+  text-decoration: underline;
+}
+
+.page__content details > summary::after {
+  content: "";
+  width: 0.45em;
+  height: 0.45em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15em) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.page__content details[open] > summary::after {
+  transform: translateY(0.1em) rotate(-135deg);
+}
+
+.page__content details > p {
+  margin: 0.6em 0 0;
+  padding: 0.9em 1.1em;
+  background: #fff;
+  border-left: 3px solid $primary-color;
+  border-radius: 0 $border-radius $border-radius 0;
+  font-size: 0.8em;
+  line-height: 1.6;
+  color: $muted-text-color;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page__content details[open] > p {
+    animation: abstract-in 0.25s ease-out;
+  }
+}
+
+@keyframes abstract-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
