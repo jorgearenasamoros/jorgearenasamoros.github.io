@@ -111,5 +111,10 @@
 }
 
 .page__content details + p {
-  margin-top: 3.5em;
+  margin-top: 2.5em;
+}
+
+/* Botones de enlaces (Slides, Paper, SSRN) algo separados del título */
+.page__content .btn {
+  margin-top: 0.5em;
 }
