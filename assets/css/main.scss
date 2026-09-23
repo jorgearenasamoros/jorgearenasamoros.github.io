@@ -104,3 +104,12 @@
     width: 100%;
   }
 }
+
+/* Research: abstract pegado a su paper y más aire entre papers */
+.page__content p:has(+ details) {
+  margin-bottom: 0.3em;
+}
+
+.page__content details + p {
+  margin-top: 3.5em;
+}
