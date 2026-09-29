@@ -174,3 +174,27 @@
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: none; }
 }
+
+/* Menú: la pestaña de la página actual queda marcada con la barra azul del hover */
+.greedy-nav .visible-links a[aria-current="page"]:before {
+  transform: scaleX(1);
+}
+
+.greedy-nav .hidden-links a[aria-current="page"] {
+  font-weight: bold;
+}
+
+/* Sin título visible en las páginas del menú (ya lo indica la pestaña marcada);
+   se mantiene para lectores de pantalla y para el título de la pestaña del navegador */
+body:has(.greedy-nav a[aria-current="page"]) .page__title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
