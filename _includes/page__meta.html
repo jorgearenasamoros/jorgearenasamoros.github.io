@@ -1,7 +1,7 @@
 {% comment %}
   Copia de _includes/page__meta.html del tema minimal-mistakes, con un único
-  cambio: si la entrada tiene "written" en el front matter, muestra
-  "Written <fecha>" (cuándo se escribió). La fecha del post (date) sigue
+  cambio: si la entrada tiene "written" en el front matter, muestra esa
+  fecha (cuándo se escribió), sin etiqueta. La fecha del post (date) sigue
   siendo la de publicación, que es la que usan el feed y el sitemap.
 {% endcomment %}
 {% assign locale = include.locale | default: site.locale %}
@@ -11,7 +11,7 @@
     {% if document.written %}
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        Written <time datetime="{{ document.written | date_to_xmlschema }}">{{ document.written | date: "%B %-d, %Y" }}</time>
+        <time datetime="{{ document.written | date_to_xmlschema }}">{{ document.written | date: "%B %-d, %Y" }}</time>
       </span>
     {% elsif document.show_date and document.date %}
       {% assign date = document.date %}

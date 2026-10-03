@@ -2,9 +2,8 @@
 title: "Stochastic volatility in the Baumeister–Hamilton SVAR"
 excerpt: "Adding a single common stochastic-volatility factor to the Baumeister–Hamilton (2015) structural VAR keeps its conjugate structure, given the volatility path. It brings no new identification and, on current US labor-market data, no gain in precision, but it measures the volatility path and makes the size of shocks depend on the state of the economy."
 date: 2026-10-03
-written: 2026-06-03
+written: 2026-06-05
 mathjax: true
-tags: [Bayesian SVAR, stochastic volatility, sign restrictions, labor market]
 ---
 
 Baumeister and Hamilton (2015), BH15 from here on, show that in a set-identified structural VAR the prior keeps shaping the posterior within the identified set even in large samples. They therefore propose to state the prior explicitly, placing it directly on the contemporaneous coefficients, which can be read as the model elasticities.
