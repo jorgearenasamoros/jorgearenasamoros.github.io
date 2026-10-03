@@ -291,7 +291,7 @@ body:has(.greedy-nav a[aria-current="page"]) .page__title {
   margin: 0.2em 0 0;
 }
 
-/* Pie de página: icono de LinkedIn en blanco (en gris oscuro apenas se ve sobre el azul) */
+/* Pie de página: icono de LinkedIn en negro, como el de GitHub (su azul apenas se ve sobre el azul) */
 .page__footer-follow .social-icons .fa-linkedin {
-  color: #fff;
+  color: #171516;
 }
