@@ -98,8 +98,10 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: home
-      author_profile: true
+      layout: single
+      permalink: /blog/:title/
+      author_profile: false
+      classes: blog-post
       read_time: true
       comments: true
       share: true

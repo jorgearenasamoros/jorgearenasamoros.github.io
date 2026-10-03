@@ -1,7 +1,8 @@
 {% comment %}
   Copia de _includes/masthead.html del tema minimal-mistakes, con un único
   cambio: la pestaña de la página actual lleva aria-current="page" para que
-  quede marcada (ver assets/css/main.scss). La raíz / cuenta como Home.
+  quede marcada (ver assets/css/main.scss), y la de su sección aria-current="true"
+  (p. ej. Blog en una entrada bajo /blog/). La raíz / cuenta como Home.
 {% endcomment %}
 {% assign locale = include.locale | default: site.locale %}
 {% assign current_url = page.url %}
@@ -24,7 +25,7 @@
             <li class="masthead__menu-item">
               <a
                 href="{{ link.url | relative_url }}"
-                {% if link.url == current_url %} aria-current="page"{% endif %}
+                {% if link.url == current_url %} aria-current="page"{% elsif link.url != "/" and current_url contains link.url %} aria-current="true"{% endif %}
                 {% if link.description %} title="{{ link.description }}"{% endif %}
                 {% if link.target %} target="{{ link.target }}"{% endif %}
               >{{ link.title }}</a>
