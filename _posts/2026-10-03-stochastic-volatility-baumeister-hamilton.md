@@ -90,7 +90,7 @@ I use the BH15 bivariate labor-market model: quarterly growth of real hourly com
   <figcaption><strong>Figure 2. Elasticity posteriors</strong> with (blue) and without (grey) stochastic volatility. The demand slope \(\beta\) (left) is essentially the same. The supply slope \(\alpha\) (right) keeps its centre, but stochastic volatility removes the right tail, between 0.5 and 1.4, that the homoskedastic model leaves open.</figcaption>
 </figure>
 
-The variance-decomposition shares do not move, with wage variance about 88% demand-driven and employment variance about 85% supply-driven in both models, but their 68% bands are about 27% narrower with stochastic volatility.
+The variance-decomposition shares barely move. Wage variance is about 88% demand-driven with stochastic volatility and 86% without, and employment variance about 85% and 80% supply-driven, but the 68% bands are about 27% narrower with stochastic volatility.
 
 **Historical decomposition.** Figure 3 compares the contributions of demand and supply shocks to employment in the two models. They share the same broad shape: supply shocks drive the build-up of employment through the 1980s and 1990s and its fall after 2008. With stochastic volatility, however, both contributions are somewhat lower, especially from the late 1990s on, and the post-2008 fall in the supply contribution is much sharper, to about −7 by 2010 against about −1 without stochastic volatility. On average, the stochastic-volatility bands are about 13% narrower.
 
@@ -99,25 +99,32 @@ The variance-decomposition shares do not move, with wage variance about 88% dema
   <figcaption><strong>Figure 3. Historical decomposition of employment</strong>: contributions of demand shocks (left) and supply shocks (right), with and without stochastic volatility. Shaded areas are 68% bands.</figcaption>
 </figure>
 
-**Unit responses.** Responses to a unit structural shock line up on impact, where they depend only on $$A$$ (Figure 4). At longer horizons they also depend on the lag coefficients, which stochastic volatility estimates by GLS, so the two models drift apart somewhat. The shapes and signs are the same and the bands overlap.
+For wages (Figure 4), demand shocks are the main driver in both models. With stochastic volatility their contribution turns negative after 2008, to about −2.7 by 2010 and −4.8 by 2014, against about 1.1 and zero without it. Unlike for employment, the bands are not narrower: on average they are as wide as without stochastic volatility.
+
+<figure>
+  <a href="/assets/blog/bh15-sv/historical-decomposition-wages.png"><img src="/assets/blog/bh15-sv/historical-decomposition-wages.png" alt="Historical decomposition of wages into demand and supply contributions, with and without stochastic volatility"></a>
+  <figcaption><strong>Figure 4. Historical decomposition of wages</strong>: contributions of demand shocks (left) and supply shocks (right), with and without stochastic volatility. Shaded areas are 68% bands.</figcaption>
+</figure>
+
+**Unit responses.** Responses to a unit structural shock line up on impact, where they depend only on $$A$$ (Figure 5). At longer horizons they also depend on the lag coefficients, which stochastic volatility estimates by GLS, so the two models drift apart somewhat. The shapes and signs are the same and the bands overlap.
 
 <figure>
   <a href="/assets/blog/bh15-sv/unit-irfs.png"><img src="/assets/blog/bh15-sv/unit-irfs.png" alt="Responses of wages and employment to unit demand and supply shocks, with and without stochastic volatility"></a>
-  <figcaption><strong>Figure 4. Responses to a unit structural shock</strong>, cumulated to levels, with and without stochastic volatility. Shaded areas are 68% bands. Impact responses coincide, and differences at longer horizons come from the lag coefficients.</figcaption>
+  <figcaption><strong>Figure 5. Responses to a unit structural shock</strong>, cumulated to levels, with and without stochastic volatility. Shaded areas are 68% bands. Impact responses coincide, and differences at longer horizons come from the lag coefficients.</figcaption>
 </figure>
 
-**State dependence.** A one-standard-deviation shock has size $$\sqrt{d_{ii}}\, e^{h_t/2}$$, so its impulse response is the unit response scaled by the volatility of the moment. A shock in 2009 moves employment about 1.8 times as much as one in 1995, the ratio of the median volatility factor in the two years, 1.35 against 0.75 (Figure 5). The homoskedastic model has a single one-standard-deviation response. Stochastic volatility replaces it with a family that breathes with the cycle.
+**State dependence.** A one-standard-deviation shock has size $$\sqrt{d_{ii}}\, e^{h_t/2}$$, so its impulse response is the unit response scaled by the volatility of the moment. A shock in 2009 moves employment about 1.8 times as much as one in 1995, the ratio of the median volatility factor in the two years, 1.35 against 0.75 (Figure 6). The homoskedastic model has a single one-standard-deviation response. Stochastic volatility replaces it with a family that breathes with the cycle.
 
 <figure>
   <a href="/assets/blog/bh15-sv/one-sd-employment.png"><img src="/assets/blog/bh15-sv/one-sd-employment.png" alt="Employment responses to one-standard-deviation demand and supply shocks in 2009 and in 1995"></a>
-  <figcaption><strong>Figure 5. One-standard-deviation responses of employment</strong> to a demand shock (left) and a supply shock (right), dated 2009 (red, high volatility) and 1995 (blue, low volatility). Same shape, but the 2009 response is about 1.8 times larger.</figcaption>
+  <figcaption><strong>Figure 6. One-standard-deviation responses of employment</strong> to a demand shock (left) and a supply shock (right), dated 2009 (red, high volatility) and 1995 (blue, low volatility). Same shape, but the 2009 response is about 1.8 times larger.</figcaption>
 </figure>
 
-**Where the volatility lives.** Under homoskedasticity, the squared demand shocks are autocorrelated, the hallmark of volatility clustering: the first-order autocorrelation is 0.26 and the Ljung–Box p-value 0.001 (Figure 6). After standardizing by the volatility factor, the autocorrelation falls to 0.14 and the p-value rises to 0.14. The supply shock shows no clustering in either model. The time-varying volatility sits in the demand shock, which is also the dominant driver of wages.
+**Where the volatility lives.** Under homoskedasticity, the squared demand shocks are autocorrelated, the hallmark of volatility clustering: the first-order autocorrelation is 0.26 and the Ljung–Box p-value 0.001 (Figure 7). After standardizing by the volatility factor, the autocorrelation falls to 0.14 and the p-value rises to 0.14. The supply shock shows no clustering in either model. The time-varying volatility sits in the demand shock, which is also the dominant driver of wages.
 
 <figure>
   <a href="/assets/blog/bh15-sv/acf-squared-shocks.png"><img src="/assets/blog/bh15-sv/acf-squared-shocks.png" alt="Autocorrelation and partial autocorrelation of the squared demand and supply shocks, with and without stochastic volatility"></a>
-  <figcaption><strong>Figure 6. Autocorrelation (left) and partial autocorrelation (right) of the squared structural shocks</strong>, for the demand shock (top) and the supply shock (bottom), with and without stochastic volatility. Dashed lines mark the \(\pm 1.96/\sqrt{T}\) bounds, and the panel titles report Ljung–Box p-values.</figcaption>
+  <figcaption><strong>Figure 7. Autocorrelation (left) and partial autocorrelation (right) of the squared structural shocks</strong>, for the demand shock (top) and the supply shock (bottom), with and without stochastic volatility. Dashed lines mark the \(\pm 1.96/\sqrt{T}\) bounds, and the panel titles report Ljung–Box p-values.</figcaption>
 </figure>
 
 ## Takeaways
