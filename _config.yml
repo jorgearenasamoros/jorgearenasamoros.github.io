@@ -76,6 +76,10 @@ author:
 #      icon: "fab fa-fw fa-instagram"
 #      url: "https://instagram.com/"
 
+# Ocultar el enlace "Feed" (RSS del blog) del pie de página y del <head>
+atom_feed:
+  hide: true
+
 footer:
   links:
 #    - label: "Twitter"
