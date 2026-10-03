@@ -14,7 +14,7 @@ The BH15 baseline is homoskedastic, yet time-varying volatility is one of the mo
 **In short**
 
 - Conditional on the volatility path, the conjugacy at the heart of BH15 survives unchanged.
-- A single common factor brings no new identifying information: identification still rests entirely on the prior.
+- A single common factor brings no new identifying information: identification still rests entirely on the set-identified model.
 - On US labor-market data for 1970–2019 it leaves the estimates and their precision essentially unchanged. What it adds is the volatility path itself: a one-standard-deviation shock in 2009 moves employment about twice as much as one in 1995.
 </div>
 
