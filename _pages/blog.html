@@ -1,0 +1,16 @@
+---
+layout: archive
+title: "Blog"
+permalink: /blog/
+---
+{% comment %}
+  Lista de entradas: solo título (mismo estilo que los títulos de los papers)
+  y la línea de fecha / tiempo de lectura. Sin introducción, sin "Recent Posts"
+  y sin el extracto de cada entrada.
+{% endcomment %}
+{% for post in site.posts %}
+<article class="blog-item">
+  <h2 class="blog-item__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+  {% include page__meta.html type="list" %}
+</article>
+{% endfor %}

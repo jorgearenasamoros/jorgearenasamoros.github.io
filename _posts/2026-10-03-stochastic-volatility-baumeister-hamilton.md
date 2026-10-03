@@ -2,6 +2,7 @@
 title: "Stochastic volatility in the Baumeister–Hamilton SVAR"
 excerpt: "Adding a single common stochastic-volatility factor to the Baumeister–Hamilton (2015) structural VAR keeps its conjugate structure, given the volatility path. It brings no new identification, but it more than halves the uncertainty about the labor-supply elasticity and makes the size of shocks depend on the state of the cycle."
 date: 2026-10-03
+written: 2026-06-03
 mathjax: true
 tags: [Bayesian SVAR, stochastic volatility, sign restrictions, labor market]
 ---
