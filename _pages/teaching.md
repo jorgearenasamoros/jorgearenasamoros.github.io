@@ -10,7 +10,7 @@ permalink: /teaching/
 - **Introduction to Statistics** (2022-23, 2023-24) - Probability theory and statistics, undergraduate
 - **Introduction to Macroeconomics** (2023-24, 2024-25) - Introductory macroeconomics, undergraduate
 - **Mathematics I** (2025-26) - Algebra and calculus, undergraduate
-- **Mathematics II** (2026-27) - Constrained optimization and linear programming, undergraduate
+- **Mathematics II** (2026-27) - Optimization and linear programming, undergraduate
 - **Statistics** (2024-25) - Graduate level
   - Instructor: M. Dolores Collado
 - **Econometrics** (2025-26) - Graduate level
