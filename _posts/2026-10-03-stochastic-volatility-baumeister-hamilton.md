@@ -13,7 +13,7 @@ The BH15 baseline is homoskedastic, yet time-varying volatility is one of the mo
 <div class="notice--info" markdown="1">
 **In short**
 
-- Conditional on the volatility path, the conjugacy at the heart of BH15 survives unchanged, so the sampler only gains two blocks.
+- Conditional on the volatility path, the conjugacy at the heart of BH15 survives unchanged.
 - A single common factor brings no new identifying information: identification still rests entirely on the prior.
 - On US labor-market data for 1970–2019 it leaves the estimates and their precision essentially unchanged. What it adds is the volatility path itself: a one-standard-deviation shock in 2009 moves employment about twice as much as one in 1995.
 </div>
@@ -63,7 +63,7 @@ The Gibbs sampler has four blocks:
 3. $$H \mid A, B, D, Y$$: the volatility path, using the Kim, Shephard and Chib (1998) mixture approximation and forward-filtering backward-sampling.
 4. $$(\phi, \sigma^2) \mid H$$: conjugate draws.
 
-Setting $$\sigma^2 \to 0$$ freezes $$h_t = 0$$ and recovers the homoskedastic BH15 sampler. Two practical details matter. The levels of $$h_t$$ and $$d_{ii}$$ are not separately identified (only $$d_{ii}\, e^{h_t}$$ is), so I recentre $$h_t$$ to mean zero at every iteration. Otherwise it drifts as $$\phi$$ approaches one. And the random walk for $$A$$ runs on the logarithms of the sign-restricted elements, so every proposal satisfies the restrictions, and its covariance is adapted during the burn-in. The note on the sampler at the end explains why this matters.
+Setting $$\sigma^2 \to 0$$ freezes $$h_t = 0$$ and recovers the homoskedastic BH15 sampler. Two practical details matter. The levels of $$h_t$$ and $$d_{ii}$$ are not separately identified (only $$d_{ii}\, e^{h_t}$$ is), so I recentre $$h_t$$ to mean zero at every iteration. Otherwise it drifts as $$\phi$$ approaches one. And the random walk for $$A$$ runs on $$\log(-\beta)$$ and $$\log \alpha$$, with the corresponding Jacobian, and its covariance is adapted during the burn-in (Haario, Saksman and Tamminen, 2001). Every proposal then satisfies the sign restrictions, and the chain explores the long right tail of $$\alpha$$, which lies against the restriction at zero and which a random walk in levels visits only rarely.
 
 ## Application: the US labor market
 
@@ -72,7 +72,7 @@ I use the BH15 bivariate labor-market model: quarterly growth of real hourly com
 **The volatility factor.** The common factor recovers the main episodes of US macroeconomic volatility: the Great Inflation, the Great Moderation and the Great Recession (Figure 1).
 
 <figure>
-  <a href="/assets/blog/bh15-sv/volatility-factor.png"><img src="/assets/blog/bh15-sv/volatility-factor.png" alt="Posterior median, 68% and 90% bands of the common volatility factor, 1970 to 2019"></a>
+  <a href="/assets/blog/bh15-sv/volatility-factor.png?v=3"><img src="/assets/blog/bh15-sv/volatility-factor.png?v=3" alt="Posterior median, 68% and 90% bands of the common volatility factor, 1970 to 2019"></a>
   <figcaption><strong>Figure 1. Common volatility factor</strong> \(e^{h_t/2}\), posterior median with 68% and 90% bands. Peaks of 1.41 in 1974:Q4 and 1.33 in 1980:Q2, below one from 1984 with a trough of 0.71 in 1996, a peak of 1.45 in 2008:Q4 and a second trough of 0.75 in 2017. Posterior means: \(\phi \approx 0.92\), \(\sigma^2 \approx 0.04\).</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ I use the BH15 bivariate labor-market model: quarterly growth of real hourly com
 | 95% interval | [−3.48, −0.22] | [−3.22, −0.15] | [0.03, 0.61] | [0.02, 0.74] |
 
 <figure>
-  <a href="/assets/blog/bh15-sv/elasticity-posteriors.png"><img src="/assets/blog/bh15-sv/elasticity-posteriors.png" alt="Posterior histograms of the demand and supply slopes with and without stochastic volatility, and their prior"></a>
+  <a href="/assets/blog/bh15-sv/elasticity-posteriors.png?v=3"><img src="/assets/blog/bh15-sv/elasticity-posteriors.png?v=3" alt="Posterior histograms of the demand and supply slopes with and without stochastic volatility, and their prior"></a>
   <figcaption><strong>Figure 2. Posterior histograms of the elasticities</strong>, with and without stochastic volatility, and the prior density, the sign-truncated Student-t of BH15. Each histogram uses 400,000 draws.</figcaption>
 </figure>
 
@@ -94,39 +94,37 @@ The variance-decomposition shares at a four-year horizon do not move either. Wag
 **Historical decomposition.** Figures 3 and 4 show the contribution of each shock to the eight-quarter growth of employment and wages in the model with stochastic volatility. Summing the contributions over an eight-quarter window, rather than cumulating them from 1970, keeps their uncertainty from accumulating over the sample. Supply shocks account for the falls in employment growth around every recession, with troughs of about −2.5 percentage points in 1975, −4.5 in 1983, −4.1 in 1992, −4.4 in 2002 and −8.1 at the end of 2009. Demand shocks move employment growth by at most about two points. The homoskedastic medians, not shown, differ from these by less than 0.8 points at any date, because the realized structural shocks are the same residuals in both models and the posteriors of $$A$$ and $$B$$ nearly coincide.
 
 <figure>
-  <a href="/assets/blog/bh15-sv/historical-decomposition.png"><img src="/assets/blog/bh15-sv/historical-decomposition.png" alt="Contributions of demand and supply shocks to eight-quarter employment growth, model with stochastic volatility"></a>
+  <a href="/assets/blog/bh15-sv/historical-decomposition.png?v=3"><img src="/assets/blog/bh15-sv/historical-decomposition.png?v=3" alt="Contributions of demand and supply shocks to eight-quarter employment growth, model with stochastic volatility"></a>
   <figcaption><strong>Figure 3. Historical decomposition of employment</strong>: contributions of demand shocks (left) and supply shocks (right) to eight-quarter employment growth, model with stochastic volatility. Posterior median with 68% and 90% bands.</figcaption>
 </figure>
 
 Wage growth is driven mostly by demand shocks, which subtract about 5.3 points in 1975 and 6.4 in 2009 and add about 5.0 in 1999 (Figure 4). Around recessions supply shocks push wages up, by about 3.1 points in 2009, the mirror image of their negative contribution to employment.
 
 <figure>
-  <a href="/assets/blog/bh15-sv/historical-decomposition-wages.png"><img src="/assets/blog/bh15-sv/historical-decomposition-wages.png" alt="Contributions of demand and supply shocks to eight-quarter wage growth, model with stochastic volatility"></a>
+  <a href="/assets/blog/bh15-sv/historical-decomposition-wages.png?v=3"><img src="/assets/blog/bh15-sv/historical-decomposition-wages.png?v=3" alt="Contributions of demand and supply shocks to eight-quarter wage growth, model with stochastic volatility"></a>
   <figcaption><strong>Figure 4. Historical decomposition of wages</strong>: contributions of demand shocks (left) and supply shocks (right) to eight-quarter wage growth, model with stochastic volatility. Posterior median with 68% and 90% bands.</figcaption>
 </figure>
 
 **Unit responses.** On impact, the response to a unit structural shock depends only on $$A$$, so the two models differ as much as their posteriors of $$A$$ do: the impact response of wages to a demand shock is 0.87 with stochastic volatility and 0.78 without (Figure 5). At longer horizons the responses also depend on the lag coefficients, which stochastic volatility estimates by GLS. The shapes and signs are the same and the bands overlap. For wages the stochastic-volatility bands are wider.
 
 <figure>
-  <a href="/assets/blog/bh15-sv/unit-irfs.png"><img src="/assets/blog/bh15-sv/unit-irfs.png" alt="Responses of wages and employment to unit demand and supply shocks, with and without stochastic volatility"></a>
+  <a href="/assets/blog/bh15-sv/unit-irfs.png?v=3"><img src="/assets/blog/bh15-sv/unit-irfs.png?v=3" alt="Responses of wages and employment to unit demand and supply shocks, with and without stochastic volatility"></a>
   <figcaption><strong>Figure 5. Responses to a unit structural shock</strong>, cumulated to levels, with and without stochastic volatility. Bands are 68% intervals.</figcaption>
 </figure>
 
 **State dependence.** A one-standard-deviation shock has size $$\sqrt{d_{ii}}\, e^{h_t/2}$$, so its impulse response is the unit response scaled by the volatility of the moment. A shock in 2009 moves employment about twice as much as one in 1995, the ratio of the median volatility factor in the two years, 1.45 against 0.72 (Figure 6). The homoskedastic model has a single one-standard-deviation response.
 
 <figure>
-  <a href="/assets/blog/bh15-sv/one-sd-employment.png"><img src="/assets/blog/bh15-sv/one-sd-employment.png" alt="Employment responses to one-standard-deviation demand and supply shocks in 2009 and in 1995"></a>
+  <a href="/assets/blog/bh15-sv/one-sd-employment.png?v=3"><img src="/assets/blog/bh15-sv/one-sd-employment.png?v=3" alt="Employment responses to one-standard-deviation demand and supply shocks in 2009 and in 1995"></a>
   <figcaption><strong>Figure 6. One-standard-deviation responses of employment</strong> to a demand shock (left) and a supply shock (right), dated 2009 (high volatility) and 1995 (low volatility). Bands are 68% intervals.</figcaption>
 </figure>
 
-**Where the volatility lives.** Figure 7 shows the autocorrelations of the squared standardized shocks, computed draw by draw. Under homoskedasticity both squared shocks are autocorrelated at the first lag, the hallmark of volatility clustering, more strongly for demand: the posterior median of the first-order autocorrelation is 0.26 for demand and 0.22 for supply, and the median Ljung–Box p-values at 20 lags are below 0.001 and about 0.01. After standardizing by the volatility factor the first-order autocorrelations fall to 0.14 and 0.17, at the edge of the $$\pm 1.96/\sqrt{T}$$ bounds, and the median p-values rise to 0.09 and 0.13. The spikes at lags 11 and 12 of the demand shock fall inside the bounds. The common factor removes most of the clustering in both shocks but not all of it. More lags in the VAR would not change this: the shocks themselves, not squared, show no significant autocorrelation.
+**Where the volatility lives.** Figure 7 shows the autocorrelations of the squared standardized shocks, computed draw by draw. Under homoskedasticity both squared shocks are autocorrelated at the first lag, the hallmark of volatility clustering, more strongly for demand: the posterior median of the first-order autocorrelation is 0.26 for demand and 0.22 for supply, and the Ljung–Box test rejects the null of no autocorrelation up to lag 20, with median p-values below 0.001 and about 0.01. After standardizing by the volatility factor the first-order autocorrelations fall to 0.14 and 0.17, at the edge of the $$\pm 1.96/\sqrt{T}$$ bounds, and the median p-values rise to 0.09 and 0.13, so the null is no longer rejected at the 5% level. The spikes at lags 11 and 12 of the demand shock fall inside the bounds. The common factor removes most of the clustering in both shocks but not all of it. More lags in the VAR would not change this: the shocks themselves, not squared, show no significant autocorrelation.
 
 <figure>
-  <a href="/assets/blog/bh15-sv/acf-squared-shocks.png"><img src="/assets/blog/bh15-sv/acf-squared-shocks.png" alt="Autocorrelation and partial autocorrelation of the squared demand and supply shocks, with and without stochastic volatility"></a>
-  <figcaption><strong>Figure 7. Autocorrelation (left) and partial autocorrelation (right) of the squared structural shocks</strong>, for the demand shock (top) and the supply shock (bottom), with and without stochastic volatility. Posterior medians and 68% intervals across draws. The grey band marks the \(\pm 1.96/\sqrt{T}\) bounds. Median Ljung–Box p-values at 20 lags: demand below 0.001 without and 0.09 with stochastic volatility, supply 0.01 and 0.13.</figcaption>
+  <a href="/assets/blog/bh15-sv/acf-squared-shocks.png?v=3"><img src="/assets/blog/bh15-sv/acf-squared-shocks.png?v=3" alt="Autocorrelation and partial autocorrelation of the squared demand and supply shocks, with and without stochastic volatility"></a>
+  <figcaption><strong>Figure 7. Autocorrelation (left) and partial autocorrelation (right) of the squared structural shocks</strong>, for the demand shock (top) and the supply shock (bottom), with and without stochastic volatility. Posterior medians and 68% intervals across draws. The grey band marks the \(\pm 1.96/\sqrt{T}\) bounds. Median p-values of the Ljung–Box test of no autocorrelation up to lag 20: demand below 0.001 without and 0.09 with stochastic volatility, supply 0.01 and 0.13.</figcaption>
 </figure>
-
-**A note on the sampler.** A first version of this note reported that stochastic volatility more than halved the posterior standard deviation of $$\alpha$$. That result came from the sampler, not from the model. A random walk on $$(\beta, \alpha)$$ in levels mixes slowly in the right tail of $$\alpha$$, which lies against the sign restriction at zero: in a chain of 50,000 draws the effective sample size of $$\alpha$$ was 60, and the estimated standard deviation depended on whether the chain happened to visit the tail. The random walk now runs on $$\log(-\beta)$$ and $$\log \alpha$$, with the corresponding Jacobian, so every proposal satisfies the sign restrictions, and its covariance is adapted during the burn-in (Haario, Saksman and Tamminen, 2001). With this sampler the tail appears in both models, and also with the original BH15 data, where the standard deviation of $$\alpha$$ is 0.24 with stochastic volatility and 0.22 without.
 
 ## Takeaways
 

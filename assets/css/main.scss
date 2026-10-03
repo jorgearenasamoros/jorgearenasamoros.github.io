@@ -222,6 +222,42 @@ body:has(.greedy-nav a[aria-current="page"]) .page__title {
   }
 }
 
+/* Entradas del blog: recuadro de resumen ("In short") con el tamaño de letra del texto,
+   fondo blanco sobre el gris de la página y borde azul marino como el de las figuras */
+.blog-post .page__content .notice--info {
+  margin: 1.5em 0 2em;
+  padding: 1.1em 1.4em;
+  font-size: 1em;
+  line-height: 1.6;
+  color: inherit;
+  background-color: #fff;
+  border-left: 4px solid #082b73;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.blog-post .page__content .notice--info > p:first-child {
+  margin: 0 0 0.6em;
+  font-size: 0.75em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #082b73;
+}
+
+.blog-post .page__content .notice--info ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.blog-post .page__content .notice--info li {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.blog-post .page__content .notice--info li:last-child {
+  margin-bottom: 0;
+}
+
 /* Blog: lista de entradas con títulos del mismo tamaño y fuente que los de los papers */
 .blog-item {
   margin-bottom: 1.3em;
