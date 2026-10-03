@@ -132,6 +132,8 @@ A single common volatility factor is a cheap addition to BH15. Given the volatil
 
 It also leaves something on the table. Part of the clustering survives the common factor in both shocks, so a shock-specific volatility $$h_{it}$$ would let relative variances move over time. That would deliver identification through heteroskedasticity on top of the BH15 prior. Extending the sample beyond 2019 requires, in addition, a treatment of the COVID outliers.
 
+[Code](https://github.com/jorgearenasamoros/bh15-stochastic-volatility){: .btn .btn--primary}
+
 ## References
 
 - Baumeister, C. and J. D. Hamilton (2015). Sign restrictions, structural vector autoregressions, and useful prior information. *Econometrica*, 83(5), 1963–1999.
