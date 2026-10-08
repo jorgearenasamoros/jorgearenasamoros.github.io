@@ -136,7 +136,7 @@ Wage growth is driven mostly by demand shocks, which subtract about 5.7 points i
 
 <p><small>Ratios of mean squared errors of the posterior median, with stochastic volatility over without it, from 500 simulated samples per row. Values below one favour stochastic volatility. The 20 objects are the two slopes, the four sums of lag coefficients and the two constants of the reduced form, ten unit responses at 0, 4 and 20 quarters (the impact responses to a supply shock are implied by those to a demand shock) and the two variance shares at four years.</small></p>
 
-The gain does not come from identification. The posterior intervals are as wide as without stochastic volatility, because the prior still determines where the posterior sits within the identified set. What changes is where the identified set lies. Its position depends on the reduced form, which stochastic volatility estimates more precisely by giving less weight to turbulent quarters, so the set, and the posterior with it, shifts less from one sample to the next.
+The gain does not come from identification: the true identified set is the same in both models. Within that set the prior still determines where the posterior sits, so the posterior intervals barely narrow, by about 10% for $$lpha$$ and not at all for $$eta$$. What changes is where the estimated set lies. Its position depends on the reduced form, which stochastic volatility estimates more precisely by giving less weight to turbulent quarters, so the set, and the posterior with it, shifts less from one sample to the next.
 
 ## Takeaways
 
