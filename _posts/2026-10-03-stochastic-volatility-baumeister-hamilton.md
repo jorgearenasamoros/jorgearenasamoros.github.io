@@ -65,7 +65,7 @@ The Gibbs sampler has four blocks:
 
 1. $$A \mid Y, H$$: random-walk Metropolis on the marginal posterior above, computed with the standardized data, with the random walk on $$\log(-\beta)$$ and $$\log \alpha$$.
 2. $$(b_i, d_{ii}) \mid A, H, Y$$: direct Normal–inverse-gamma draws, equation by equation.
-3. $$H \mid A, B, D, Y$$: the volatility path, using the Kim, Shephard and Chib (1998) mixture approximation to $$\log \chi^2_1$$, which matches its mean $$E[\log \chi^2_1] \approx -1.27$$, and forward-filtering backward-sampling.
+3. $$H \mid A, B, D, Y$$: the volatility path, using the Kim, Shephard and Chib (1998) mixture approximation and forward-filtering backward-sampling.
 4. $$(\phi, \sigma^2) \mid H$$: conjugate draws.
 
 Setting $$\sigma^2 \to 0$$ freezes $$h_t = 0$$ and recovers the homoskedastic BH15 sampler. Two practical details matter. The levels of $$h_t$$ and $$d_{ii}$$ are not separately identified (only $$d_{ii}\, e^{h_t}$$ is), so I recentre $$h_t$$ to mean zero at every iteration. Otherwise it drifts as $$\phi$$ approaches one. And the random walk for $$A$$ runs on $$\log(-\beta)$$ and $$\log \alpha$$, with the corresponding Jacobian, and its covariance is adapted during the burn-in (Haario, Saksman and Tamminen, 2001). Every proposal then satisfies the sign restrictions, and the chain explores the long right tail of $$\alpha$$, which lies against the restriction at zero and which a random walk in levels visits only rarely.
