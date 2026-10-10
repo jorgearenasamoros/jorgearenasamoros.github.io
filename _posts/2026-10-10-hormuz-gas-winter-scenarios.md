@@ -1,7 +1,7 @@
 ---
 title: "Gas lost or gas feared? Hormuz and the European gas price this winter"
 excerpt: "Tanker captains are being paid danger money, attacks on ships in the Strait of Hormuz have intensified, and transits are at their lowest since July. Not surprisingly, European gas prices rose 40% between July and September. Feeding the latest available data to a structural model of the European gas market allows us to recover the shocks behind the rise and to compute three scenarios for the coming winter, using prediction markets to gauge how likely each one is."
-date: 2026-10-11
+date: 2026-10-10
 written: 2026-10-10
 ---
 
