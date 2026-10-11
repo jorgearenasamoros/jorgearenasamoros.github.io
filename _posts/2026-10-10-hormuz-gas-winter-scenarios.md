@@ -23,6 +23,25 @@ In Europe, the gas price has climbed with the risk. The Dutch TTF contract for d
 - Reading prediction markets, I put the probability of a reopening at about 15%, of a frozen conflict at about 65% and of a return to full-scale war at about 20%. Weighting the model's scenarios with these probabilities, there is a probability of about 17% that the monthly gas price reaches its August 2022 average at some point between October 2026 and March 2027 (9% to 25% with other plausible weights). The figure depends on how severe a war would be: with a milder one it falls to about 8%. Gas futures, however, point to a calmer winter.
 </div>
 
+<p class="pdf-download">
+  <a class="btn btn--primary" href="https://github.com/jorgearenasamoros/jorgearenasamoros.github.io/releases/download/hormuz-2026-10/Hormuz_gas_winter_2026.pdf">Download the PDF edition</a>
+  <span id="pdf-downloads" style="margin-left: 0.6em; font-size: 0.8em; color: #666;"></span>
+</p>
+<script>
+(function () {
+  var el = document.getElementById('pdf-downloads');
+  if (!el || !window.fetch) return;
+  fetch('https://api.github.com/repos/jorgearenasamoros/jorgearenasamoros.github.io/releases/tags/hormuz-2026-10')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.assets || !d.assets.length) return;
+      var n = d.assets.reduce(function (s, a) { return s + (a.download_count || 0); }, 0);
+      el.textContent = n === 1 ? 'Downloaded once' : 'Downloaded ' + n.toLocaleString('en-GB') + ' times';
+    })
+    .catch(function () {});
+})();
+</script>
+
 ## Why do we need a model?
 
 Prices and quantities push on each other, so the raw series of volumes and prices alone cannot say whether the price rose because gas went missing or because demand rose. This note uses a structural model of the European gas market ([paper](https://jorgearenasamoros.github.io/research/)) that estimates how suppliers, consumers and the firms that fill storage respond to the price, and from that recovers the supply and demand "surprises" or "shocks" behind each month's data.
