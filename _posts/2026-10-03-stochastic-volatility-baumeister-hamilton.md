@@ -10,6 +10,8 @@ Baumeister and Hamilton (2015), BH15 from here on, show that in a set-identified
 
 The BH15 baseline is homoskedastic, yet time-varying volatility is one of the most robust features of macroeconomic data, especially in commodity markets. In this note I add the most parsimonious departure from homoskedasticity: a single common log-volatility factor that scales all structural shocks at once.
 
+The device is not new. Carriero, Clark and Marcellino (2016) show that a common drifting volatility keeps natural conjugacy in large reduced-form VARs, and Chan (2020) extends the result to any serial covariance common to all variables. This note carries it over to the structural form of BH15, with its prior on the contemporaneous coefficients, and looks at what it does and does not change in the labor-market application.
+
 <div class="notice--info" markdown="1">
 **In short**
 
@@ -52,9 +54,9 @@ $$
 z^{\star}_{it} = e^{-h_t/2}\, a_i' y_t, \qquad x^{\star}_{t} = e^{-h_t/2}\, x_{t-1}.
 $$
 
-In these GLS-standardized variables every equation is again homoskedastic with variance $$d_{ii}$$, so the Normal–inverse-gamma algebra goes through line by line. The standardization Jacobian, $$\exp\big(-\tfrac{1}{2}\sum_t h_t\big)$$, depends only on the volatility path. Given $$H$$ it is a constant, so it drops out of the conditional posteriors and of the Metropolis acceptance ratio for $$A$$. The structural Jacobian $$\lvert \det A \rvert^{T}$$ is unchanged.
+In these GLS-standardized variables every equation is again homoskedastic with variance $$d_{ii}$$, so the Normal–inverse-gamma algebra goes through line by line. This is the rescaling of Carriero, Clark and Marcellino (2016), applied equation by equation in the structural form. The standardization Jacobian, $$\exp\big(-\tfrac{1}{2}\sum_t h_t\big)$$, depends only on the volatility path. Given $$H$$ it is a constant, so it drops out of the conditional posteriors and of the Metropolis acceptance ratio for $$A$$. The structural Jacobian $$\lvert \det A \rvert^{T}$$ is unchanged.
 
-The common factor does not help identification, though. With a single factor the relative variances never change, $$d_{it}/d_{jt} = d_{ii}/d_{jj}$$ in every period, whereas identification through heteroskedasticity (Rigobon, 2003; Lanne, Lütkepohl and Maciejowska, 2010; Lewis, 2021) requires them to move. Identification therefore still rests entirely on the prior $$p(A)$$, as in BH15.
+The common factor does not help identification, though. With a single factor the relative variances never change, $$d_{it}/d_{jt} = d_{ii}/d_{jj}$$ in every period, whereas identification through heteroskedasticity requires them to move. That is the idea of Rigobon (2003) and Lanne, Lütkepohl and Maciejowska (2010), used with volatility regimes by Brunnermeier, Palia, Sastry and Sims (2021) and with stochastic volatility by Lewis (2021) and Bertsche and Braun (2022). Identification therefore still rests entirely on the prior $$p(A)$$, as in BH15.
 
 <figure>
   <a href="/assets/blog/bh15-sv/loglik-sv.png?v=5"><img src="/assets/blog/bh15-sv/loglik-sv.png?v=5" alt="Contours of the log likelihood for the supply and demand slopes in the model with stochastic volatility"></a>
@@ -66,7 +68,7 @@ The Gibbs sampler has four blocks:
 1. $$A \mid Y, H$$: random-walk Metropolis on the marginal posterior above, computed with the standardized data, with the random walk on $$\log(-\beta)$$ and $$\log \alpha$$.
 2. $$(b_i, d_{ii}) \mid A, H, Y$$: direct Normal–inverse-gamma draws, equation by equation.
 3. $$H \mid A, B, D, Y$$: the volatility path, using the Kim, Shephard and Chib (1998) mixture approximation and forward-filtering backward-sampling.
-4. $$(\phi, \sigma^2) \mid H$$: conjugate draws.
+4. $$(\phi, \sigma^2) \mid H$$: an inverse-gamma draw for $$\sigma^2$$ and a Metropolis–Hastings step for $$\phi$$, whose conditional is not conjugate because of the stationary initial condition.
 
 Setting $$\sigma^2 \to 0$$ freezes $$h_t = 0$$ and recovers the homoskedastic BH15 sampler. Two practical details matter. The levels of $$h_t$$ and $$d_{ii}$$ are not separately identified (only $$d_{ii}\, e^{h_t}$$ is), so I recentre $$h_t$$ to mean zero at every iteration. Otherwise it drifts as $$\phi$$ approaches one. And the random walk for $$A$$ runs on $$\log(-\beta)$$ and $$\log \alpha$$, with the corresponding Jacobian, so that every proposal satisfies the sign restrictions. Its covariance is adapted during the burn-in (Haario, Saksman and Tamminen, 2001).
 
@@ -147,14 +149,20 @@ The gain does not come from identification: the true identified set is the same 
 
 A single common volatility factor is a cheap addition to BH15. Given the volatility path the conjugate sampler is unchanged, and one extra block delivers the volatility. It does not relax the identification problem, and the posterior medians of the elasticities, the variance decomposition and the historical decomposition stay close to the homoskedastic ones. In simulations calibrated to the data, however, it lowers the mean squared error of the typical estimate by about a quarter when volatility moves. What it adds is a measured volatility path and shock sizes that move with the state of the economy.
 
-It also leaves something on the table. With a single factor the relative variances of the shocks are fixed by construction. A shock-specific volatility $$h_{it}$$ would let them move over time, which would deliver identification through heteroskedasticity on top of the BH15 prior. Extending the sample beyond 2019 requires, in addition, a treatment of the COVID outliers.
+It also leaves something on the table. With a single factor the relative variances of the shocks are fixed by construction. A shock-specific volatility $$h_{it}$$ would let them move over time, which would deliver identification through heteroskedasticity on top of the BH15 prior. Carriero, Marcellino and Tornese (2024) do this with shock variances that switch across regimes in the same labor-market application, and Doppelt (2023) with seasonal variances. Extending the sample beyond 2019 requires, in addition, a treatment of the COVID outliers.
 
 [Code](https://github.com/jorgearenasamoros/bh15-stochastic-volatility){: .btn .btn--primary}
 
 ## References
 
 - Baumeister, C. and J. D. Hamilton (2015). Sign restrictions, structural vector autoregressions, and useful prior information. *Econometrica*, 83(5), 1963–1999.
+- Bertsche, D. and R. Braun (2022). Identification of structural vector autoregressions by stochastic volatility. *Journal of Business & Economic Statistics*, 40(1), 328–341.
+- Brunnermeier, M. K., D. Palia, K. A. Sastry and C. A. Sims (2021). Feedbacks: Financial markets and economic activity. *American Economic Review*, 111(6), 1845–1879.
+- Carriero, A., T. E. Clark and M. Marcellino (2016). Common drifting volatility in large Bayesian VARs. *Journal of Business & Economic Statistics*, 34(3), 375–390.
 - Carriero, A., T. E. Clark, M. Marcellino and E. Mertens (2024). Addressing COVID-19 outliers in BVARs with stochastic volatility. *Review of Economics and Statistics*, 106(5), 1403–1417.
+- Carriero, A., M. Marcellino and T. Tornese (2024). Blended identification in structural VARs. *Journal of Monetary Economics*, 146, 103581.
+- Chan, J. C. C. (2020). Large Bayesian VARs: A flexible Kronecker error covariance structure. *Journal of Business & Economic Statistics*, 38(1), 68–79.
+- Doppelt, R. (2023). Should macroeconomists use seasonally adjusted time series? Structural identification and Bayesian estimation in seasonal vector autoregressions. Working paper, Pennsylvania State University.
 - Haario, H., E. Saksman and J. Tamminen (2001). An adaptive Metropolis algorithm. *Bernoulli*, 7(2), 223–242.
 - Kim, S., N. Shephard and S. Chib (1998). Stochastic volatility: likelihood inference and comparison with ARCH models. *Review of Economic Studies*, 65(3), 361–393.
 - Lanne, M., H. Lütkepohl and K. Maciejowska (2010). Structural vector autoregressions with Markov switching. *Journal of Economic Dynamics and Control*, 34(2), 121–131.
