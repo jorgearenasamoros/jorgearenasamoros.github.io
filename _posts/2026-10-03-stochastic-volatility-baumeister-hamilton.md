@@ -10,7 +10,7 @@ Baumeister and Hamilton (2015), BH15 from here on, show that in a set-identified
 
 The BH15 baseline is homoskedastic, yet time-varying volatility is one of the most robust features of macroeconomic data, especially in commodity markets. In this note I add the most parsimonious departure from homoskedasticity: a single common log-volatility factor that scales all structural shocks at once.
 
-The device is not new. Carriero, Clark and Marcellino (2016) show that a common drifting volatility keeps natural conjugacy in large reduced-form VARs, and Chan (2020) extends the result to any serial covariance common to all variables. This note carries it over to the structural form of BH15, with its prior on the contemporaneous coefficients, and looks at what it does and does not change in the labor-market application.
+The device is not new. Carriero, Clark and Marcellino (2016) show that a common drifting volatility keeps natural conjugacy in large reduced-form VARs, and Chan (2020) extends the result to any serial covariance common to all variables. This note carries it over to the structural form of BH15, with its prior on the contemporaneous coefficients, and applies it to US labor-market data.
 
 <div class="notice--info" markdown="1">
 **In short**
@@ -56,7 +56,7 @@ $$
 
 In these GLS-standardized variables every equation is again homoskedastic with variance $$d_{ii}$$, so the Normal–inverse-gamma algebra goes through line by line. This is the rescaling of Carriero, Clark and Marcellino (2016), applied equation by equation in the structural form. The standardization Jacobian, $$\exp\big(-\tfrac{1}{2}\sum_t h_t\big)$$, depends only on the volatility path. Given $$H$$ it is a constant, so it drops out of the conditional posteriors and of the Metropolis acceptance ratio for $$A$$. The structural Jacobian $$\lvert \det A \rvert^{T}$$ is unchanged.
 
-The common factor does not help identification, though. With a single factor the relative variances never change, $$d_{it}/d_{jt} = d_{ii}/d_{jj}$$ in every period, whereas identification through heteroskedasticity requires them to move. That is the idea of Rigobon (2003) and Lanne, Lütkepohl and Maciejowska (2010), used with volatility regimes by Brunnermeier, Palia, Sastry and Sims (2021) and with stochastic volatility by Lewis (2021) and Bertsche and Braun (2022). Identification therefore still rests entirely on the prior $$p(A)$$, as in BH15.
+The common factor does not help identification, though. With a single factor the relative variances never change, $$d_{it}/d_{jt} = d_{ii}/d_{jj}$$ in every period, whereas identification through heteroskedasticity requires them to move. That is the idea of Rigobon (2003) and Lanne, Lütkepohl and Maciejowska (2010), used with volatility regimes by Brunnermeier, Palia, Sastry and Sims (2021) and with stochastic volatility by Lewis (2021) and Bertsche and Braun (2022). In this extension there are still many values of $$A$$ with the same likelihood (Figure 1), so here identification still rests entirely on the prior $$p(A)$$, as in BH15.
 
 <figure>
   <a href="/assets/blog/bh15-sv/loglik-sv.png?v=5"><img src="/assets/blog/bh15-sv/loglik-sv.png?v=5" alt="Contours of the log likelihood for the supply and demand slopes in the model with stochastic volatility"></a>
