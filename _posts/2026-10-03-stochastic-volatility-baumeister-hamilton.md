@@ -149,7 +149,7 @@ The gain does not come from identification: the true identified set is the same 
 
 A single common volatility factor is a cheap addition to BH15. Given the volatility path the conjugate sampler is unchanged, and one extra block delivers the volatility. It does not relax the identification problem, and the posterior medians of the elasticities, the variance decomposition and the historical decomposition stay close to the homoskedastic ones. In simulations calibrated to the data, however, it lowers the mean squared error of the typical estimate by about a quarter when volatility moves. What it adds is a measured volatility path and shock sizes that move with the state of the economy.
 
-It also leaves something on the table. With a single factor the relative variances of the shocks are fixed by construction. A shock-specific volatility $$h_{it}$$ would let them move over time, which would deliver identification through heteroskedasticity on top of the BH15 prior. Carriero, Marcellino and Tornese (2024) do this with shock variances that switch across regimes in the same labor-market application, and Doppelt (2023) with seasonal variances. Extending the sample beyond 2019 requires, in addition, a treatment of the COVID outliers.
+It also leaves something on the table. With a single factor the relative variances of the shocks are fixed by construction, so the volatility cannot help to identify the elasticities. Extending the sample beyond 2019 requires, in addition, a treatment of the COVID outliers.
 
 [Code](https://github.com/jorgearenasamoros/bh15-stochastic-volatility){: .btn .btn--primary}
 
@@ -160,9 +160,7 @@ It also leaves something on the table. With a single factor the relative varianc
 - Brunnermeier, M. K., D. Palia, K. A. Sastry and C. A. Sims (2021). Feedbacks: Financial markets and economic activity. *American Economic Review*, 111(6), 1845–1879.
 - Carriero, A., T. E. Clark and M. Marcellino (2016). Common drifting volatility in large Bayesian VARs. *Journal of Business & Economic Statistics*, 34(3), 375–390.
 - Carriero, A., T. E. Clark, M. Marcellino and E. Mertens (2024). Addressing COVID-19 outliers in BVARs with stochastic volatility. *Review of Economics and Statistics*, 106(5), 1403–1417.
-- Carriero, A., M. Marcellino and T. Tornese (2024). Blended identification in structural VARs. *Journal of Monetary Economics*, 146, 103581.
 - Chan, J. C. C. (2020). Large Bayesian VARs: A flexible Kronecker error covariance structure. *Journal of Business & Economic Statistics*, 38(1), 68–79.
-- Doppelt, R. (2023). Should macroeconomists use seasonally adjusted time series? Structural identification and Bayesian estimation in seasonal vector autoregressions. Working paper, Pennsylvania State University.
 - Haario, H., E. Saksman and J. Tamminen (2001). An adaptive Metropolis algorithm. *Bernoulli*, 7(2), 223–242.
 - Kim, S., N. Shephard and S. Chib (1998). Stochastic volatility: likelihood inference and comparison with ARCH models. *Review of Economic Studies*, 65(3), 361–393.
 - Lanne, M., H. Lütkepohl and K. Maciejowska (2010). Structural vector autoregressions with Markov switching. *Journal of Economic Dynamics and Control*, 34(2), 121–131.
