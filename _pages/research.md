@@ -16,6 +16,7 @@ The 2022 European energy crisis exposed the central role of supply substitution 
 </details>
 
 **What Do Fed Funds Futures Price?**  
+[SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7536678){: .btn .btn--primary}  
 <details>
 <summary><strong>Abstract</strong> </summary>
 <p>
