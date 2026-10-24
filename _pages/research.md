@@ -26,8 +26,8 @@ Fed funds futures price the expected policy path entangled with a risk premium. 
 ---
 
 ## Work in progress
-**Nonlinear price dynamics in gas and electricity spot markets** 
-_(Abstract coming soon!)_
+**Nonlinear price dynamics in gas and electricity markets**  
+with [Francesco Ravazzolo](http://francescoravazzolo.com/#home) and [Simone Giannerini](https://www.simonegiannerini.net/homepage)
 
 **New measures of market-based monetary policy surprises in macroeconomic outcomes** 
 _(Abstract coming soon!)_
